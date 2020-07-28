@@ -1,0 +1,79 @@
+
+function Convert-word {
+
+    Param (
+        
+        $Word
+    )
+    
+    $WordLengthRestrict = "5"
+    $wordoutput = @()
+    $wordLength = $Word.length
+    $WordLengthWArning = $null
+    if ($wordLength -gt $WordLengthRestrict){
+        
+        $Word = $Word.substring(0, $WordLengthRestrict)
+        $WordLengthWArning = "However, because you entered $wordLength letters your input has been limited to 5"
+    }
+    $CharArray = ($Word.tochararray())
+    
+    Foreach ($Cha in $CharArray){
+
+        If (($Cha -eq "a") -or ($Cha -eq "b") -or ($Cha -eq "c")){
+
+            $wordoutput += "2"
+            
+        }
+        
+        If (($Cha -eq "d") -or ($Cha -eq "e") -or ($Cha -eq "f")){
+
+            $wordoutput += "3"
+
+        }
+                
+        If (($Cha -eq "g") -or ($Cha -eq "h") -or ($Cha -eq "i")){
+
+            $wordoutput += "4"
+
+        }
+                
+        If (($Cha -eq "j") -or ($Cha -eq "k") -or ($Cha -eq "l")){
+
+            $wordoutput += "5"
+
+        }
+                
+        If (($Cha -eq "m") -or ($Cha -eq "n") -or ($Cha -eq "o")){
+
+            $wordoutput += "6"
+
+        }
+                
+        If (($Cha -eq "p") -or ($Cha -eq "q") -or ($Cha -eq "r") -or ($Cha -eq "s")){
+
+            $wordoutput += "7"
+
+        }
+                
+        If (($Cha -eq "t") -or ($Cha -eq "u") -or ($Cha -eq "v")){
+
+            $wordoutput += "8"
+
+        }
+                
+        If (($Cha -eq "w") -or ($Cha -eq "x") -or ($Cha -eq "y") -or ($Cha -eq "z")){
+
+            $wordoutput += "9"
+
+        }
+     }
+     cls
+     Write-Host ""
+     Write-Host "The answer is "" $wordoutput """ $WordLengthWArning -ForegroundColor Green
+    Write-Host ""
+}
+
+$UserInput = Read-Host "Please enter the word you would like to convert"
+
+Convert-word $UserInput
+pause
