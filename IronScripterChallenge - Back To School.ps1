@@ -15,7 +15,7 @@ Calculate the factorial of an integer.
 
 .EXAMPLE
    Calculate-Triangle -length1 10 -length2 15
-.AURTHOR
+.AUTHOR
    Dean Wood
 #>
 
